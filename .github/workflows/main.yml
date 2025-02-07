@@ -39,8 +39,8 @@ jobs:
 
       # Build Angular App with correct base href
       - name: Build Angular App
-        run: pnpm nx build mqml-frontedn-workspace --no-cloud --base-href /mqml-frontedn-workspace/
-        working-directory: mqml-frontedn-workspace/
+        run: pnpm nx build mqml-frontedn-workspace --no-cloud --base-href /mqml.diy/
+
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
