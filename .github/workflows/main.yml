@@ -30,16 +30,20 @@ jobs:
         with:
           node-version: 22
 
-      - uses: pnpm/action-setup@v2
+      - name: install pnpm
+        uses: pnpm/action-setup@v2
         with:
           version: 8.14.1
-      - run: pnpm install --no-frozen-lockfile
+
+          
+      - name: install dependencies
+        run: pnpm install --no-frozen-lockfile
         working-directory: mqml-frontend-workspace
 
 
       # Build Angular App with correct base href
       - name: Build Angular App
-        working-directory: ./mqml-frontend-workspace
+        working-directory: mqml-frontend-workspace
         run: pnpm nx build mqml-frontend --no-cloud --configuration=production
 
 
