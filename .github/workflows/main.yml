@@ -31,6 +31,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets. }}
-          publish_dir: dist/your-angular-project-name
+          github_token: ${{ secrets.MQML_TOKEN }}
+          publish_dir: dist/mqml-frontend-workspace
           cname: your-custom-domain.com # Remove or modify if not using a custom domain
