@@ -23,7 +23,10 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --no-fund --no-audit
+
+      - name: Set up Nx workspace
+        run: npx nx reset
 
       - name: Build Angular App
         run: npx nx build mqml-frontend-workspace --prod
