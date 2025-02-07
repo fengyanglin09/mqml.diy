@@ -36,16 +36,11 @@ jobs:
       - run: pnpm install --no-frozen-lockfile
         working-directory: mqml-frontend-workspace
 
-      # - name: Install dependencies
-      #   working-directory: ./mqml-frontedn-workspace/
-      #   run: npm install --no-fund --no-audit
-
-      # - name: Set up Nx workspace
-      #   run: npx nx reset
 
       # Build Angular App with correct base href
       - name: Build Angular App
         run: pnpm nx build mqml-frontedn-workspace --no-cloud --base-href /mqml.diy/
+        working-directory: ./mqml-frontend-workspace
 
 
       - name: Deploy to GitHub Pages
