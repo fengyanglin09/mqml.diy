@@ -48,19 +48,9 @@ jobs:
 
 
 
-      # Deploy the Angular App to GitHub Pages
-#      - name: Deploy to GitHub Pages
-#        run: |
-#          npx angular-cli-ghpages --dir=dist/apps/mqml-frontend-workspace
-#        working-directory: mqml-frontend-workspace
-#        env:
-#          CI: true
-#          GH_TOKEN: ${{ MQML_TOKEN }}
-
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.MQML_SITE }}
-          publish_dir: dist/mqml-frontend-workspace
-          cname: your-custom-domain.com # Remove or modify if not using a custom domain
+          publish_dir: mqml-frontend-workspace/dist/mqml-frontend-workspace
+#          cname: your-custom-domain.com # Remove or modify if not using a custom domain
