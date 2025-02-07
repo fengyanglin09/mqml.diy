@@ -20,6 +20,11 @@ jobs:
           fetch-depth: 0
           clean: false
 
+
+      - name: Show directory contents
+        run: ls -lah ${{ github.workspace }}
+    
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
