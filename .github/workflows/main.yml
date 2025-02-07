@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:  # ✅ Enables manual execution    
 
 permissions:
   contents: write
@@ -15,22 +16,31 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'npm'
 
-      - name: Install dependencies
-        working-directory: ./mqml-frontedn-workspace/
-        run: npm install --no-fund --no-audit
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.14.1
+      - run: pnpm install --no-frozen-lockfile
+        working-directory: mqml-frontend-workspace
 
-      - name: Set up Nx workspace
-        run: npx nx reset
+      # - name: Install dependencies
+      #   working-directory: ./mqml-frontedn-workspace/
+      #   run: npm install --no-fund --no-audit
 
+      # - name: Set up Nx workspace
+      #   run: npx nx reset
+
+      # Build Angular App with correct base href
       - name: Build Angular App
-        run: npx nx build mqml-frontend-workspace --prod
+        run: pnpm nx build mqml-frontedn-workspace --no-cloud --base-href /mqml-frontedn-workspace/
+        working-directory: mqml-frontedn-workspace/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
