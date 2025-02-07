@@ -23,6 +23,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
+        working-directory: ./mqml-frontedn-workspace/
         run: npm install --no-fund --no-audit
 
       - name: Set up Nx workspace
