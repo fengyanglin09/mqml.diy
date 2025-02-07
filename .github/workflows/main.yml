@@ -44,7 +44,8 @@ jobs:
       # Build Angular App with correct base href
       - name: Build Angular App
         working-directory: mqml-frontend-workspace
-        run: pnpm nx build mqml-frontend-workspace --no-cloud --configuration=production
+        run: pnpm nx build mqml-frontend-workspace --no-cloud --configuration=production --verbose
+
 
 
 
