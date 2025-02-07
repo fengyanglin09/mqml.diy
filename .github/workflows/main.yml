@@ -56,4 +56,3 @@ jobs:
         with:
           github_token: ${{ secrets.MQML_SITE }}
           publish_dir: mqml-frontend-workspace/dist/mqml-frontend-workspace
-#          cname: your-custom-domain.com # Remove or modify if not using a custom domain
