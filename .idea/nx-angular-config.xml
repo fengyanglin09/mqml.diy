@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="NxAngularConfigService" workspaceLocation="file://$PROJECT_DIR$/mqml-frontend-workspace/nx.json">
+    <projects>
+      <project name="lib-components" file="file://$PROJECT_DIR$/mqml-frontend-workspace/libs/ui/lib-components/project.json" />
+      <project name="mqml-frontend-workspace" file="file://$PROJECT_DIR$/mqml-frontend-workspace/project.json" />
+    </projects>
+  </component>
+</project>
