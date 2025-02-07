@@ -46,6 +46,9 @@ jobs:
         working-directory: mqml-frontend-workspace
         run: pnpm nx build mqml-frontend-workspace --no-cloud --configuration=production --verbose
 
+      # Verify build output
+      - name: Verify build output
+        run: ls -lah mqml-frontend-workspace/dist/mqml-frontend-workspace
 
 
       - name: Deploy to GitHub Pages
